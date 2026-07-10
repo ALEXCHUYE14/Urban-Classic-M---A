@@ -1,0 +1,170 @@
+const img = (id, w = 800) =>
+  `https://images.unsplash.com/${id}?q=80&w=${w}&auto=format&fit=crop`
+
+export const CATEGORIES = [
+  {
+    id: 'formal',
+    name: 'Camisas & Camiseros',
+    tagline: 'Formal · Casual',
+    image: img('photo-1596755094514-f87e34085b2c', 900),
+  },
+  {
+    id: 'outdoor',
+    name: 'Rendimiento & Outdoor',
+    tagline: 'Técnicas · Ligeras',
+    image: img('photo-1552374196-1ab2a1c593e8', 900),
+  },
+  {
+    id: 'polos',
+    name: 'Polos Premium',
+    tagline: 'Algodón piqué · Corte sartorial',
+    image: img('photo-1523381210434-271e8be1f52b', 900),
+  },
+]
+
+export const BRANDS = ['UC Atelier', 'Sierra North', 'Club Heritage']
+
+export const SIZES = ['S', 'M', 'L', 'XL', 'XXL']
+
+export const COLORS = [
+  { id: 'negro', label: 'Negro', hex: '#1a1a1c' },
+  { id: 'blanco', label: 'Blanco', hex: '#f2f0ea' },
+  { id: 'grafito', label: 'Grafito', hex: '#4a4d55' },
+  { id: 'marino', label: 'Marino', hex: '#1e2a45' },
+  { id: 'oliva', label: 'Oliva', hex: '#4d5340' },
+  { id: 'arena', label: 'Arena', hex: '#c7b299' },
+]
+
+export const PRODUCTS = [
+  {
+    id: 'uc-001',
+    name: 'Camisa Oxford Ejecutiva',
+    category: 'formal',
+    brand: 'UC Atelier',
+    price: 89,
+    compareAt: 120,
+    colors: ['blanco', 'marino'],
+    sizes: ['S', 'M', 'L', 'XL'],
+    image: img('photo-1596755094514-f87e34085b2c'),
+    badge: 'Best Seller',
+  },
+  {
+    id: 'uc-002',
+    name: 'Camisero Lino Toscana',
+    category: 'formal',
+    brand: 'UC Atelier',
+    price: 95,
+    colors: ['arena', 'blanco'],
+    sizes: ['M', 'L', 'XL', 'XXL'],
+    image: img('photo-1602810318383-e386cc2a3ccf'),
+  },
+  {
+    id: 'uc-003',
+    name: 'Camisa Sartorial Noche',
+    category: 'formal',
+    brand: 'Club Heritage',
+    price: 110,
+    colors: ['negro', 'grafito'],
+    sizes: ['S', 'M', 'L'],
+    image: img('photo-1507003211169-0a1dd7228f2d'),
+    badge: 'Nuevo',
+  },
+  {
+    id: 'uc-004',
+    name: 'Camisero Chambray Urbano',
+    category: 'formal',
+    brand: 'UC Atelier',
+    price: 78,
+    colors: ['marino', 'grafito'],
+    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+    image: img('photo-1589310243389-96a5483213a8'),
+  },
+  {
+    id: 'uc-101',
+    name: 'Camisa Técnica Trail Pro',
+    category: 'outdoor',
+    brand: 'Sierra North',
+    price: 84,
+    colors: ['oliva', 'grafito'],
+    sizes: ['M', 'L', 'XL', 'XXL'],
+    image: img('photo-1552374196-1ab2a1c593e8'),
+    badge: 'UPF 50+',
+  },
+  {
+    id: 'uc-102',
+    name: 'Camisero Ripstop Expedición',
+    category: 'outdoor',
+    brand: 'Sierra North',
+    price: 92,
+    colors: ['arena', 'oliva'],
+    sizes: ['S', 'M', 'L', 'XL'],
+    image: img('photo-1500648767791-00dcc994a43e'),
+  },
+  {
+    id: 'uc-103',
+    name: 'Camisa Ventilada Altiplano',
+    category: 'outdoor',
+    brand: 'Sierra North',
+    price: 76,
+    compareAt: 98,
+    colors: ['marino', 'arena'],
+    sizes: ['M', 'L', 'XL'],
+    image: img('photo-1618354691373-d851c5c3a990'),
+  },
+  {
+    id: 'uc-104',
+    name: 'Camisero Secado Rápido Delta',
+    category: 'outdoor',
+    brand: 'Sierra North',
+    price: 88,
+    colors: ['grafito', 'oliva'],
+    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+    image: img('photo-1434389677669-e08b4cac3105'),
+    badge: 'Nuevo',
+  },
+  {
+    id: 'uc-201',
+    name: 'Polo Piqué Signature',
+    category: 'polos',
+    brand: 'Club Heritage',
+    price: 68,
+    colors: ['marino', 'blanco', 'negro'],
+    sizes: ['S', 'M', 'L', 'XL'],
+    image: img('photo-1523381210434-271e8be1f52b'),
+    badge: 'Best Seller',
+  },
+  {
+    id: 'uc-202',
+    name: 'Polo Regatta Club',
+    category: 'polos',
+    brand: 'Club Heritage',
+    price: 72,
+    colors: ['blanco', 'marino'],
+    sizes: ['M', 'L', 'XL', 'XXL'],
+    image: img('photo-1586363104862-3a5e2ab60d99'),
+  },
+  {
+    id: 'uc-203',
+    name: 'Polo Mercerizado Côte',
+    category: 'polos',
+    brand: 'UC Atelier',
+    price: 79,
+    compareAt: 95,
+    colors: ['negro', 'grafito', 'oliva'],
+    sizes: ['S', 'M', 'L'],
+    image: img('photo-1603252109303-2751441dd157'),
+  },
+  {
+    id: 'uc-204',
+    name: 'Polo Heritage Contraste',
+    category: 'polos',
+    brand: 'Club Heritage',
+    price: 65,
+    colors: ['blanco', 'arena'],
+    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+    image: img('photo-1571945153237-4929e783af4a'),
+  },
+]
+
+export const formatPrice = (n) =>
+  new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(n)

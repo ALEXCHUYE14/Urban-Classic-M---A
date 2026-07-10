@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#0B0B0D"/>
+  <text x="32" y="40" font-family="Georgia, serif" font-size="22" fill="#B99A5F" text-anchor="middle" letter-spacing="1">UC</text>
+  <rect x="18" y="46" width="28" height="1.5" fill="#B99A5F" opacity="0.7"/>
+</svg>
