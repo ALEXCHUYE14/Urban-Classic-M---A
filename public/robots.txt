@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://urbanclassiccmya.vercel.app/sitemap.xml

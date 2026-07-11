@@ -4,18 +4,24 @@ export default {
   theme: {
     extend: {
       colors: {
-        ink: '#0B0B0D',
-        graphite: '#141519',
-        smoke: '#1F2127',
-        line: '#2B2E36',
-        bone: '#F4F2ED',
-        fog: '#9AA0AB',
+        // Tema claro: "ink" y "bone" se invierten respecto al diseño original
+        // (ink = fondo claro de página, bone = texto oscuro / botones).
+        // "void" conserva el negro original para overlays sobre fotos (Hero,
+        // tarjetas de producto, scrims de modales), donde el texto debe
+        // seguir siendo claro sin importar el tema del resto del sitio.
+        ink: '#F1EFEA',
+        graphite: '#FFFFFF',
+        smoke: '#EBE7DE',
+        line: '#E0DACD',
+        bone: '#171614',
+        fog: '#6E6C64',
         brass: {
-          DEFAULT: '#B99A5F',
-          soft: '#CDB07A',
-          dim: '#8C7344',
+          DEFAULT: '#96712F',
+          soft: '#B08A47',
+          dim: '#6E5322',
         },
-        pine: '#22443A',
+        pine: '#3F8F63',
+        void: '#0B0B0D',
       },
       fontFamily: {
         display: ['"Space Grotesk"', 'system-ui', 'sans-serif'],

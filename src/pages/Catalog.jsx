@@ -71,7 +71,7 @@ export default function Catalog() {
             <SlidersHorizontal size={15} strokeWidth={1.5} />
             Filtrar
             {Object.values(filters).filter(Boolean).length > 0 && (
-              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-brass text-[10px] font-bold text-ink">
+              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-brass text-[10px] font-bold text-bone">
                 {Object.values(filters).filter(Boolean).length}
               </span>
             )}
@@ -103,7 +103,7 @@ export default function Catalog() {
       {mobileFiltersOpen && (
         <div className="fixed inset-0 z-50 lg:hidden" role="dialog" aria-modal="true">
           <button
-            className="absolute inset-0 animate-fade-in bg-ink/70 backdrop-blur-sm"
+            className="absolute inset-0 animate-fade-in bg-void/70 backdrop-blur-sm"
             onClick={() => setMobileFiltersOpen(false)}
             aria-label="Cerrar filtros"
           />
@@ -121,7 +121,7 @@ export default function Catalog() {
             <FilterPanel filters={filters} setFilters={setFilters} resultCount={filtered.length} />
             <button
               onClick={() => setMobileFiltersOpen(false)}
-              className="mt-8 w-full bg-bone py-4 text-[13px] font-semibold uppercase tracking-[0.18em] text-ink transition-colors hover:bg-brass"
+              className="mt-8 w-full bg-bone py-4 text-[13px] font-semibold uppercase tracking-[0.18em] text-ink transition-colors hover:bg-brass hover:text-bone"
             >
               Ver {filtered.length} {filtered.length === 1 ? 'prenda' : 'prendas'}
             </button>

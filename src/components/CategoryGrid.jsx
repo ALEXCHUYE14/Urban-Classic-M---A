@@ -34,11 +34,11 @@ export default function CategoryGrid() {
               loading="lazy"
               className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/20 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-void/90 via-void/20 to-transparent" />
             <div className="absolute inset-x-0 bottom-0 p-6">
-              <p className="text-[11px] uppercase tracking-[0.2em] text-brass">{cat.tagline}</p>
-              <h3 className="mt-2 font-display text-xl font-semibold text-bone">{cat.name}</h3>
-              <span className="mt-3 inline-flex items-center gap-1.5 text-[12px] font-medium uppercase tracking-[0.14em] text-fog transition-colors group-hover:text-brass">
+              <p className="text-[11px] uppercase tracking-[0.2em] text-brass-soft">{cat.tagline}</p>
+              <h3 className="mt-2 font-display text-xl font-semibold text-white">{cat.name}</h3>
+              <span className="mt-3 inline-flex items-center gap-1.5 text-[12px] font-medium uppercase tracking-[0.14em] text-white/70 transition-colors group-hover:text-brass-soft">
                 Descubrir
                 <ArrowUpRight size={14} className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
               </span>

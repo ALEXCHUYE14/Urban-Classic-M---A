@@ -67,7 +67,7 @@ export default function Account() {
 
       <button
         onClick={signOut}
-        className="mt-8 inline-flex items-center gap-2.5 text-[13px] font-medium uppercase tracking-[0.16em] text-fog transition-colors hover:text-red-400"
+        className="mt-8 inline-flex items-center gap-2.5 text-[13px] font-medium uppercase tracking-[0.16em] text-fog transition-colors hover:text-red-600"
       >
         <LogOut size={16} strokeWidth={1.5} />
         Cerrar sesión

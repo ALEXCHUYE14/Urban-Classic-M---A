@@ -4,8 +4,8 @@
   "description": "Ropa exclusiva para caballeros",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0B0B0D",
-  "theme_color": "#0B0B0D",
+  "background_color": "#F1EFEA",
+  "theme_color": "#F1EFEA",
   "icons": [
     {
       "src": "/icon.svg",

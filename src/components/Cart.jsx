@@ -1,10 +1,12 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { X, Minus, Plus, Trash2, ShoppingBag, ArrowRight } from 'lucide-react'
 import { useCart } from '../context/CartContext'
 import { formatPrice } from '../data/products'
+import YapeModal from './YapeModal'
 
 export default function Cart() {
   const { items, isOpen, closeCart, updateQty, removeItem, subtotal } = useCart()
+  const [showYape, setShowYape] = useState(false)
 
   // Bloquear scroll del body cuando el carrito está abierto
   useEffect(() => {
@@ -30,7 +32,7 @@ export default function Cart() {
     <div className="fixed inset-0 z-50" role="dialog" aria-modal="true" aria-label="Carrito de compras">
       {/* Overlay */}
       <button
-        className="absolute inset-0 animate-fade-in bg-ink/70 backdrop-blur-sm"
+        className="absolute inset-0 animate-fade-in bg-void/70 backdrop-blur-sm"
         onClick={closeCart}
         aria-label="Cerrar carrito"
       />
@@ -79,7 +81,7 @@ export default function Cart() {
                       </div>
                       <button
                         onClick={() => removeItem(item.key)}
-                        className="p-1 text-fog transition-colors hover:text-red-400"
+                        className="p-1 text-fog transition-colors hover:text-red-600"
                         aria-label="Eliminar artículo"
                       >
                         <Trash2 size={15} strokeWidth={1.5} />
@@ -134,7 +136,10 @@ export default function Cart() {
                   Agrega {formatPrice(150 - subtotal)} más para envío gratuito.
                 </p>
               )}
-              <button className="group mt-5 flex w-full items-center justify-center gap-3 bg-bone py-4 text-[13px] font-semibold uppercase tracking-[0.18em] text-ink transition-colors hover:bg-brass">
+              <button
+                onClick={() => setShowYape(true)}
+                className="group mt-5 flex w-full items-center justify-center gap-3 bg-bone py-4 text-[13px] font-semibold uppercase tracking-[0.18em] text-ink transition-colors hover:bg-brass hover:text-bone"
+              >
                 Finalizar compra
                 <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
               </button>
@@ -142,6 +147,8 @@ export default function Cart() {
           </>
         )}
       </aside>
+
+      {showYape && <YapeModal onClose={() => setShowYape(false)} />}
     </div>
   )
 }

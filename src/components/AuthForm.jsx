@@ -43,7 +43,7 @@ function Field({ icon: Icon, error, children }) {
         {children}
       </div>
       {error && (
-        <p className="mt-1.5 flex items-center gap-1.5 text-[12px] text-red-400">
+        <p className="mt-1.5 flex items-center gap-1.5 text-[12px] text-red-600">
           <AlertCircle size={13} /> {error}
         </p>
       )}
@@ -146,13 +146,13 @@ export default function AuthForm() {
 
       {/* Mensajes globales */}
       {serverError && (
-        <div className="mb-5 flex animate-fade-in items-start gap-3 border border-red-400/40 bg-red-400/10 px-4 py-3 text-[13px] text-red-300">
+        <div className="mb-5 flex animate-fade-in items-start gap-3 border border-red-400/40 bg-red-400/10 px-4 py-3 text-[13px] text-red-600">
           <AlertCircle size={16} className="mt-0.5 flex-shrink-0" />
           {serverError}
         </div>
       )}
       {successMsg && (
-        <div className="mb-5 flex animate-fade-in items-start gap-3 border border-brass/40 bg-brass/10 px-4 py-3 text-[13px] text-brass-soft">
+        <div className="mb-5 flex animate-fade-in items-start gap-3 border border-brass/40 bg-brass/10 px-4 py-3 text-[13px] text-brass">
           <CheckCircle2 size={16} className="mt-0.5 flex-shrink-0" />
           {successMsg}
         </div>
@@ -205,7 +205,7 @@ export default function AuthForm() {
         <button
           type="submit"
           disabled={status === 'loading' || status === 'success'}
-          className="group flex w-full items-center justify-center gap-3 bg-bone py-4 text-[13px] font-semibold uppercase tracking-[0.18em] text-ink transition-all duration-300 hover:bg-brass disabled:cursor-not-allowed disabled:opacity-70"
+          className="group flex w-full items-center justify-center gap-3 bg-bone py-4 text-[13px] font-semibold uppercase tracking-[0.18em] text-ink transition-all duration-300 hover:bg-brass hover:text-bone disabled:cursor-not-allowed disabled:opacity-70"
         >
           {status === 'loading' && <Loader2 size={16} className="animate-spin" />}
           {status === 'success' && <CheckCircle2 size={16} className="text-pine" />}

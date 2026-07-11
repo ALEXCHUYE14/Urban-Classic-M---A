@@ -9,6 +9,7 @@ import Footer from './components/Footer'
 import Home from './pages/Home'
 import Catalog from './pages/Catalog'
 import Account from './pages/Account'
+import Contact from './pages/Contact'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -29,6 +30,7 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/catalogo" element={<Catalog />} />
             <Route path="/cuenta" element={<Account />} />
+            <Route path="/contacto" element={<Contact />} />
           </Routes>
           <Footer />
           <Cart />

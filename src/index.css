@@ -31,20 +31,33 @@
   }
 }
 
+/* Chrome/Edge fuerzan un fondo celeste en inputs autocompletados que ningún
+   className de Tailwind puede sobreescribir; se neutraliza con el truco del
+   box-shadow inset + transición larga para mantener la paleta de la marca. */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #171614;
+  caret-color: #171614;
+  -webkit-box-shadow: 0 0 0 1000px #ebe7de inset;
+  box-shadow: 0 0 0 1000px #ebe7de inset;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
 /* Scrollbar sutil en desktop */
 @media (min-width: 768px) {
   ::-webkit-scrollbar {
     width: 10px;
   }
   ::-webkit-scrollbar-track {
-    background: #0b0b0d;
+    background: #f1efea;
   }
   ::-webkit-scrollbar-thumb {
-    background: #2b2e36;
+    background: #e0dacd;
     border-radius: 8px;
-    border: 2px solid #0b0b0d;
+    border: 2px solid #f1efea;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #8c7344;
+    background: #6e5322;
   }
 }

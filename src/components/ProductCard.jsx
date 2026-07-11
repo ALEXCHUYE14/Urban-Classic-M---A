@@ -28,7 +28,7 @@ export default function ProductCard({ product }) {
         />
 
         {product.badge && (
-          <span className="absolute left-3 top-3 bg-ink/80 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.16em] text-brass backdrop-blur-sm">
+          <span className="absolute left-3 top-3 bg-void/80 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.16em] text-brass-soft backdrop-blur-sm">
             {product.badge}
           </span>
         )}
@@ -39,12 +39,12 @@ export default function ProductCard({ product }) {
             showSizes ? 'translate-y-0 opacity-100' : 'pointer-events-none translate-y-2 opacity-0'
           }`}
         >
-          <div className="flex items-center justify-center gap-1.5 bg-ink/90 p-2.5 backdrop-blur-md">
+          <div className="flex items-center justify-center gap-1.5 bg-void/90 p-2.5 backdrop-blur-md">
             {product.sizes.map((s) => (
               <button
                 key={s}
                 onClick={() => handleAdd(s)}
-                className="flex h-9 w-9 items-center justify-center text-[12px] font-medium text-bone transition-colors hover:bg-brass hover:text-ink"
+                className="flex h-9 w-9 items-center justify-center text-[12px] font-medium text-white transition-colors hover:bg-brass hover:text-bone"
               >
                 {s}
               </button>
@@ -57,7 +57,7 @@ export default function ProductCard({ product }) {
           onClick={() => setShowSizes((v) => !v)}
           aria-label={`Añadir ${product.name} a la bolsa`}
           className={`absolute bottom-3 right-3 flex h-11 w-11 items-center justify-center rounded-full shadow-card transition-all duration-300 md:translate-y-2 md:opacity-0 md:group-hover:translate-y-0 md:group-hover:opacity-100 ${
-            added ? 'bg-pine text-bone' : 'bg-bone text-ink hover:bg-brass'
+            added ? 'bg-pine text-bone' : 'bg-bone text-ink hover:bg-brass hover:text-bone'
           } ${showSizes ? '!translate-y-0 !opacity-100 rotate-45' : ''}`}
         >
           {added ? <Check size={18} /> : <Plus size={18} className="transition-transform duration-300" />}

@@ -16,7 +16,7 @@ export const CATEGORIES = [
   },
   {
     id: 'polos',
-    name: 'Polos Premium',
+    name: 'Polos',
     tagline: 'Algodón piqué · Corte sartorial',
     image: img('photo-1523381210434-271e8be1f52b', 900),
   },
@@ -167,4 +167,4 @@ export const PRODUCTS = [
 ]
 
 export const formatPrice = (n) =>
-  new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(n)
+  new Intl.NumberFormat('es-PE', { style: 'currency', currency: 'PEN', maximumFractionDigits: 0 }).format(n)

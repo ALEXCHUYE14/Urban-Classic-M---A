@@ -26,7 +26,7 @@ export default function BottomNav() {
           <span className="relative">
             <ShoppingBag size={21} strokeWidth={1.5} />
             {count > 0 && (
-              <span className="absolute -right-2 -top-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-brass text-[9px] font-bold text-ink">
+              <span className="absolute -right-2 -top-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-brass text-[9px] font-bold text-bone">
                 {count}
               </span>
             )}
