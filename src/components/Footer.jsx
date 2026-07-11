@@ -38,7 +38,6 @@ export default function Footer() {
 
         <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-line/60 pt-7 text-[11px] uppercase tracking-[0.16em] text-fog sm:flex-row">
           <p>© {new Date().getFullYear()} Urban Classic M &amp; A. Todos los derechos reservados.</p>
-          <p>Hecho con oficio.</p>
         </div>
       </div>
     </footer>

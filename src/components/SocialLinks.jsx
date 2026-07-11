@@ -2,6 +2,7 @@ import { Instagram, Facebook } from 'lucide-react'
 
 const TIKTOK_URL = 'https://www.tiktok.com/@urbanclasiccmya?_r=1&_t=ZS-97v7ptHi2an'
 const FACEBOOK_URL = 'https://www.facebook.com/share/1QfXFCSgRt/'
+const INSTAGRAM_URL = 'https://www.instagram.com/urbanclasiccmya?igsh=Mnl6b29lZzE5bzI0'
 
 function TikTokIcon({ size = 18 }) {
   return (
@@ -12,7 +13,7 @@ function TikTokIcon({ size = 18 }) {
 }
 
 const SOCIALS = [
-  { id: 'instagram', label: 'Instagram', href: '#', Icon: Instagram, comingSoon: true },
+  { id: 'instagram', label: 'Instagram', href: INSTAGRAM_URL, Icon: Instagram, comingSoon: false },
   { id: 'tiktok', label: 'TikTok', href: TIKTOK_URL, Icon: TikTokIcon, comingSoon: false },
   { id: 'facebook', label: 'Facebook', href: FACEBOOK_URL, Icon: Facebook, comingSoon: false },
 ]
