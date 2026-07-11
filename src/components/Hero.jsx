@@ -25,14 +25,12 @@ export default function Hero() {
           style={{ animationDelay: '120ms' }}
         >
           Calidad que resiste, estilo que perdura.
-          <br />
-          <span className="text-white/60">Viste la excelencia en cada fibra.</span>
         </h1>
         <p
           className="mt-6 max-w-md animate-fade-up text-[15px] leading-relaxed text-white/75"
           style={{ animationDelay: '240ms' }}
         >
-          Camisas, polos y prendas de rendimiento seleccionadas para el caballero que no negocia con la calidad.
+          Viste la excelencia en cada fibra.
         </p>
         {/* El texto y botones del Hero usan blanco/void literal (no los tokens
             ink/bone del tema) porque siempre se apoyan sobre la foto oscurecida,
