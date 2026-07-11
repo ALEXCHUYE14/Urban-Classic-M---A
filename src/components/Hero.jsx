@@ -7,8 +7,8 @@ export default function Hero() {
       {/* Imagen de fondo con tratamiento editorial */}
       <div className="absolute inset-0">
         <img
-          src="https://images.unsplash.com/photo-1490578474895-699cd4e2cf59?q=80&w=1800&auto=format&fit=crop"
-          alt="Colección Urban Classic"
+          src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=1800&auto=format&fit=crop"
+          alt="Amigos vistiendo la colección Urban Classic M&A"
           className="h-full w-full object-cover object-center"
           fetchpriority="high"
         />
