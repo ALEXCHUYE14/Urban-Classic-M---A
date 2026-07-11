@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { SlidersHorizontal, X } from 'lucide-react'
-import { PRODUCTS, CATEGORIES } from '../data/products'
+import { PRODUCTS, CATEGORIES, normalizeText } from '../data/products'
 import ProductCard from '../components/ProductCard'
 import FilterPanel from '../components/FilterPanel'
 
@@ -12,29 +12,41 @@ export default function Catalog() {
     size: null,
     color: null,
     brand: null,
+    search: searchParams.get('q') || '',
   })
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
 
-  // Sincronizar categoría desde la URL (ej. links del navbar / footer)
+  // Sincronizar categoría y búsqueda desde la URL (ej. links del navbar / buscador)
   useEffect(() => {
     const cat = searchParams.get('cat')
-    setFilters((prev) => (prev.category === cat ? prev : { ...prev, category: cat || null }))
+    const q = searchParams.get('q') || ''
+    setFilters((prev) =>
+      prev.category === (cat || null) && prev.search === q
+        ? prev
+        : { ...prev, category: cat || null, search: q }
+    )
   }, [searchParams])
 
-  // Reflejar la categoría activa en la URL
+  // Reflejar categoría y búsqueda activas en la URL
   useEffect(() => {
-    const current = searchParams.get('cat')
-    if ((filters.category || null) !== (current || null)) {
-      setSearchParams(filters.category ? { cat: filters.category } : {}, { replace: true })
+    const currentCat = searchParams.get('cat')
+    const currentQ = searchParams.get('q') || ''
+    if ((filters.category || null) !== (currentCat || null) || filters.search !== currentQ) {
+      const next = {}
+      if (filters.category) next.cat = filters.category
+      if (filters.search) next.q = filters.search
+      setSearchParams(next, { replace: true })
     }
-  }, [filters.category, searchParams, setSearchParams])
+  }, [filters.category, filters.search, searchParams, setSearchParams])
 
   const filtered = useMemo(() => {
+    const q = normalizeText(filters.search.trim())
     return PRODUCTS.filter((p) => {
       if (filters.category && p.category !== filters.category) return false
       if (filters.size && !p.sizes.includes(filters.size)) return false
       if (filters.color && !p.colors.includes(filters.color)) return false
       if (filters.brand && p.brand !== filters.brand) return false
+      if (q && !normalizeText(p.name).includes(q)) return false
       return true
     })
   }, [filters])
@@ -51,6 +63,17 @@ export default function Catalog() {
         <h1 className="mt-3 font-display text-3xl font-bold text-bone sm:text-5xl">
           {activeCategory ? activeCategory.name : 'Toda la colección'}
         </h1>
+        {filters.search && (
+          <p className="mt-3 text-[13px] text-fog">
+            Resultados para “{filters.search}”
+            <button
+              onClick={() => setFilters((prev) => ({ ...prev, search: '' }))}
+              className="ml-2 text-brass hover:underline"
+            >
+              Quitar búsqueda
+            </button>
+          </p>
+        )}
       </header>
 
       <div className="flex gap-12">
@@ -70,9 +93,9 @@ export default function Catalog() {
           >
             <SlidersHorizontal size={15} strokeWidth={1.5} />
             Filtrar
-            {Object.values(filters).filter(Boolean).length > 0 && (
+            {[filters.category, filters.size, filters.color, filters.brand].filter(Boolean).length > 0 && (
               <span className="flex h-5 w-5 items-center justify-center rounded-full bg-brass text-[10px] font-bold text-bone">
-                {Object.values(filters).filter(Boolean).length}
+                {[filters.category, filters.size, filters.color, filters.brand].filter(Boolean).length}
               </span>
             )}
           </button>
@@ -81,7 +104,7 @@ export default function Catalog() {
             <div className="flex flex-col items-center gap-4 py-24 text-center">
               <p className="text-[15px] text-fog">No encontramos prendas con esos filtros.</p>
               <button
-                onClick={() => setFilters({ category: null, size: null, color: null, brand: null })}
+                onClick={() => setFilters({ category: null, size: null, color: null, brand: null, search: '' })}
                 className="border border-line px-6 py-3 text-[12px] font-semibold uppercase tracking-[0.16em] text-bone transition-colors hover:border-brass hover:text-brass"
               >
                 Limpiar filtros

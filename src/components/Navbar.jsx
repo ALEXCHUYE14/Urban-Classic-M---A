@@ -3,6 +3,7 @@ import { Link, NavLink, useLocation } from 'react-router-dom'
 import { ShoppingBag, User, Search } from 'lucide-react'
 import { useCart } from '../context/CartContext'
 import { useAuth } from '../context/AuthContext'
+import SearchModal from './SearchModal'
 
 const links = [
   { to: '/', label: 'Inicio' },
@@ -17,6 +18,7 @@ export default function Navbar() {
   const { user } = useAuth()
   const { pathname } = useLocation()
   const [scrolled, setScrolled] = useState(false)
+  const [searchOpen, setSearchOpen] = useState(false)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24)
@@ -66,15 +68,16 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center gap-1">
-          <Link
-            to="/catalogo"
+          <button
+            type="button"
+            onClick={() => setSearchOpen(true)}
             aria-label="Buscar"
             className={`hidden rounded-full p-2.5 transition-colors md:block ${
               overHero ? 'text-white/80 hover:bg-white/10 hover:text-white' : 'text-fog hover:bg-smoke hover:text-bone'
             }`}
           >
             <Search size={19} strokeWidth={1.5} />
-          </Link>
+          </button>
           <Link
             to="/cuenta"
             aria-label="Mi cuenta"
@@ -100,6 +103,8 @@ export default function Navbar() {
           </button>
         </div>
       </nav>
+
+      {searchOpen && <SearchModal onClose={() => setSearchOpen(false)} />}
     </header>
   )
 }

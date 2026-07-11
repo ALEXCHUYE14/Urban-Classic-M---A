@@ -29,9 +29,9 @@ export default function FilterPanel({ filters, setFilters, resultCount }) {
   const toggle = (key, value) =>
     setFilters((prev) => ({ ...prev, [key]: prev[key] === value ? null : value }))
 
-  const activeCount = Object.values(filters).filter(Boolean).length
+  const activeCount = [filters.category, filters.size, filters.color, filters.brand].filter(Boolean).length
 
-  const clearAll = () => setFilters({ category: null, size: null, color: null, brand: null })
+  const clearAll = () => setFilters((prev) => ({ ...prev, category: null, size: null, color: null, brand: null }))
 
   return (
     <div className="space-y-7">

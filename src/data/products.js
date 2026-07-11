@@ -168,3 +168,8 @@ export const PRODUCTS = [
 
 export const formatPrice = (n) =>
   new Intl.NumberFormat('es-PE', { style: 'currency', currency: 'PEN', maximumFractionDigits: 0 }).format(n)
+
+// Quita acentos y pasa a minúsculas para que la búsqueda encuentre
+// "polo pique" aunque el producto se llame "Polo Piqué".
+const DIACRITICS_RE = new RegExp('[̀-ͯ]', 'g')
+export const normalizeText = (s) => s.normalize('NFD').replace(DIACRITICS_RE, '').toLowerCase()
