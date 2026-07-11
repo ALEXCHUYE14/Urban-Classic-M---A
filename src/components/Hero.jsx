@@ -24,9 +24,9 @@ export default function Hero() {
           className="mt-5 max-w-3xl animate-fade-up font-display text-4xl font-bold leading-[1.05] text-white text-balance sm:text-6xl lg:text-7xl"
           style={{ animationDelay: '120ms' }}
         >
-          Sastrería urbana,
+          Calidad que resiste, estilo que perdura.
           <br />
-          <span className="text-white/60">carácter atemporal.</span>
+          <span className="text-white/60">Viste la excelencia en cada fibra.</span>
         </h1>
         <p
           className="mt-6 max-w-md animate-fade-up text-[15px] leading-relaxed text-white/75"
