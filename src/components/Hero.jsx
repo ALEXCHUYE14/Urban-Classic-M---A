@@ -17,25 +17,10 @@ export default function Hero() {
       </div>
 
       <div className="relative mx-auto w-full max-w-7xl px-5 pb-24 pt-40 lg:px-8 lg:pb-32">
-        <p className="animate-fade-up text-xs font-medium uppercase tracking-widest2 text-brass">
-          Temporada Otoño — Invierno 2026
-        </p>
-        <h1
-          className="mt-5 max-w-3xl animate-fade-up font-display text-4xl font-bold leading-[1.05] text-white text-balance sm:text-6xl lg:text-7xl"
-          style={{ animationDelay: '120ms' }}
-        >
-          Calidad que resiste, estilo que perdura.
-        </h1>
-        <p
-          className="mt-6 max-w-md animate-fade-up text-[15px] leading-relaxed text-white/75"
-          style={{ animationDelay: '240ms' }}
-        >
-          Viste la excelencia en cada fibra.
-        </p>
-        {/* El texto y botones del Hero usan blanco/void literal (no los tokens
-            ink/bone del tema) porque siempre se apoyan sobre la foto oscurecida,
-            sin importar si el resto del sitio está en modo claro u oscuro. */}
-        <div className="mt-10 flex animate-fade-up flex-wrap gap-4" style={{ animationDelay: '360ms' }}>
+        {/* Los botones usan blanco/void literal (no los tokens ink/bone del
+            tema) porque siempre se apoyan sobre la foto oscurecida, sin
+            importar si el resto del sitio está en modo claro u oscuro. */}
+        <div className="flex animate-fade-up flex-wrap gap-4">
           <Link
             to="/catalogo"
             className="group inline-flex items-center gap-3 bg-white px-8 py-4 text-[13px] font-semibold uppercase tracking-[0.18em] text-void transition-all duration-300 hover:bg-brass"

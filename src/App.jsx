@@ -6,6 +6,7 @@ import Navbar from './components/Navbar'
 import BottomNav from './components/BottomNav'
 import Cart from './components/Cart'
 import Footer from './components/Footer'
+import WhatsAppButton from './components/WhatsAppButton'
 import Home from './pages/Home'
 import Catalog from './pages/Catalog'
 import Account from './pages/Account'
@@ -35,6 +36,7 @@ export default function App() {
           <Footer />
           <Cart />
           <BottomNav />
+          <WhatsAppButton />
         </CartProvider>
       </AuthProvider>
     </BrowserRouter>

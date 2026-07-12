@@ -18,7 +18,7 @@ export default function ProductCard({ product }) {
   }
 
   return (
-    <article className="group animate-fade-up">
+    <article className="group">
       <div className="relative aspect-[3/4] overflow-hidden bg-graphite shadow-card">
         <img
           src={product.image}

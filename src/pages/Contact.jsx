@@ -1,8 +1,7 @@
 import { useState } from 'react'
 import { User, Tag, MessageSquare, AlertCircle, Send, Phone } from 'lucide-react'
 import SocialLinks from '../components/SocialLinks'
-
-const WHATSAPP_NUMBER = '51924996961'
+import { WHATSAPP_NUMBER } from '../lib/contact'
 
 function validate({ name, message }) {
   const errors = {}

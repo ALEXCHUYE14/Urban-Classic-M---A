@@ -2,9 +2,7 @@ import { useEffect, useState } from 'react'
 import { X, Copy, Check, QrCode, MessageCircle } from 'lucide-react'
 import { useCart } from '../context/CartContext'
 import { formatPrice } from '../data/products'
-
-const YAPE_NUMBER = '924996961'
-const WHATSAPP_NUMBER = '51924996961'
+import { WHATSAPP_NUMBER, YAPE_NUMBER } from '../lib/contact'
 
 function buildOrderMessage({ items, subtotal, shipping, total }) {
   const lines = [

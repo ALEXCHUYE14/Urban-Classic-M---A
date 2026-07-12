@@ -1,8 +1,5 @@
 import { Instagram, Facebook } from 'lucide-react'
-
-const TIKTOK_URL = 'https://www.tiktok.com/@urbanclasiccmya?_r=1&_t=ZS-97v7ptHi2an'
-const FACEBOOK_URL = 'https://www.facebook.com/share/1QfXFCSgRt/'
-const INSTAGRAM_URL = 'https://www.instagram.com/urbanclasiccmya?igsh=Mnl6b29lZzE5bzI0'
+import { TIKTOK_URL, FACEBOOK_URL, INSTAGRAM_URL } from '../lib/contact'
 
 function TikTokIcon({ size = 18 }) {
   return (
